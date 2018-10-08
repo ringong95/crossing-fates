@@ -1,54 +1,24 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
-
+import SearchFilter from '../../components/SearchFilter'
+import CharacterAutofill from '../../components/CharacterAutofill'
 class Header extends Component {
     constructor(props){
         super(props)
         this.state = {
-            value: 1,
+            characterOne: 1,
+            characterTwo: 2,
           };
     }
 
-    handleChange = (event, index, value) => this.setState({value});
+    handleChangeOne = (event, index, value) => this.setState({...this.state, characterOne:value});
+    handleChangeTwo = (event, index, value) => this.setState({...this.state, characterTwo:value});
+
 
     render() {
         return (
             <div>
              <p> Search Filter  </p>
-                <div>
-                <SelectField
-                    floatingLabelText="First Character"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                >
-                    <MenuItem value={1} primaryText="Never" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
-                <br />
-                
-                <SelectField
-                    floatingLabelText="Second Character"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                >
-                    <MenuItem value={1} primaryText="Never" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
-                <br />
-                <TextField
-                floatingLabelText="Player"
-                floatingLabelFixed={true}
-                />
-              </div>
+            <CharacterAutofill/>
             </div>
         )
         
