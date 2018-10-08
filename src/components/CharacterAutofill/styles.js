@@ -1,6 +1,6 @@
 const styles = theme => ({
     root: {
-        height: 250,
+        // height: 250,
         flexGrow: 1,
         margin: 'auto 5%',
     },
