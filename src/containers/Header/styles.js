@@ -1,19 +1,12 @@
-const styles = theme => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    formControl: {
-      margin: theme.spacing.unit,
-      minWidth: 120,
-      maxWidth: 300,
-    },
-    chips: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    chip: {
-      margin: theme.spacing.unit / 4,
-    },
-  });
-  export default styles
+import styled from 'styled-components'
+
+export const SearchContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`;
+export const SearchFields = styled.div`
+  width: 50%;
+`
+export const ContainerLabel = styled.p`
+  width: 100%
+`
