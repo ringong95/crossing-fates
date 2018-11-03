@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import TextField from '@material-ui/core/TextField';
 
 import CharacterAutofill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
