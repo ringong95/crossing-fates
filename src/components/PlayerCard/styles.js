@@ -19,8 +19,8 @@ background: #6DB3F2 url(${props => require(`../../charImages/${props.char.abbrev
 background-position: top center;
 background-size: 175%;
 background-repeat: no-repeat;
--webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%); 
+-webkit-clip-path: polygon(0 0, 100% 0%, 55% 100%, 0% 100%);
+clip-path: polygon(0 0, 100% 0%, 55% 100%, 0% 100%); 
 `
 
 export const SecondHalf = styled.div`
@@ -33,12 +33,13 @@ background: #FEB22E  url(${props => require(`../../charImages/${props.char.abbre
 background-position: top center;
 background-size: 175%;
 background-repeat: no-repeat;
--webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%); 
+-webkit-clip-path: polygon(45% 0, 100% 0%, 100% 100%, 0% 100%);
+clip-path: polygon(45% 0, 100% 0%, 100% 100%, 0% 100%); 
 `
 
 export const InfoText = styled.p`
-text-shadow: 1px 1px white;
+
+  text-shadow: 1px 1px white;
 `
 
 
