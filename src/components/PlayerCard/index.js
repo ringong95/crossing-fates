@@ -1,22 +1,29 @@
 import React from 'react';
 
-import { Card, PlayerNameText, InfoText } from './styles'
+import { Card, PlayerNameText, InfoText, FirstHalf, SecondHalf  } from './styles'
 
 const PlayerCard = ({side= 0, pName='unknown', charOne='Default', charTwo='Default 2'}) => {
-
+    
     return  (
         <Card charOne={charOne}>
-            <PlayerNameText >
-                Player: {pName}
-            </PlayerNameText>
-            <img src={require('../../../public/charImages/' + charOne.abbrev + '.png')} />
+            <FirstHalf char={charOne}>
             <InfoText>
-                Character One: {charOne.enName}
+            Player: {pName}
+            <br/>
+            Character One: {charOne.enName}
+            <br/>
+            
+            Character Two: {charTwo.enName}
+            <br/>
+            
             </InfoText>
-            <InfoText>
-                Character Two: {charTwo.enName}
-            </InfoText>
+            </FirstHalf>
+            <SecondHalf char={charTwo}>
+            
+            </SecondHalf>
+        
         </Card>
-    )
-}
-export default PlayerCard
+        )
+    }
+    
+    export default PlayerCard

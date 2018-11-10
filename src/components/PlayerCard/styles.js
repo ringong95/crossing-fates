@@ -1,28 +1,44 @@
 import styled from 'styled-components'
 
-
-export const CardContainer = styled.div`
-  width:100%
-  display:flex
-`
-
 export const Card = styled.div`
-background: ${props => props.charOne.abbrev &&  `url(require("images/img.svg"))`};
-  width:33.5%;
+
+width:33.5%;
+height: 500px;
+position: relative;
 `
 
 export const CharImage = styled.img`
-width: 100px;
-height: 100px;
--webkit-clip-path: polygon(0 0, 0 100px, 100px 80px, 100px 0);
+`
+export const FirstHalf = styled.div`
+position: absolute;
+height: 100%;
+width: 65%;
+left: 0;
+top: 0;
+background: #6DB3F2 url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background-position: top center;
+background-size: 175%;
+background-repeat: no-repeat;
+-webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%); 
 `
 
-export const PlayerNameText = styled.p`
-
+export const SecondHalf = styled.div`
+position: absolute;
+height: 100%;
+width: 65%;
+right: 0;
+top: 0;
+background: #FEB22E  url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background-position: top center;
+background-size: 175%;
+background-repeat: no-repeat;
+-webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%); 
 `
 
 export const InfoText = styled.p`
-
+text-shadow: 1px 1px white;
 `
 
 
