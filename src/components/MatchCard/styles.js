@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   display:flex
 `
 
-export const MatchInfo = styled.div`
+export const MatchInfoContainer = styled.div`
   background: SeaGreen;
   width:33%;
 

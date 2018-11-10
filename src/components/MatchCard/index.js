@@ -1,17 +1,19 @@
 import React from 'react'
 
-import { CardContainer, MatchInfo, InfoText, } from './styles'
+import AbbreviationsToName from './../../lib/AbbreviationsToName'
+import { CardContainer, MatchInfoContainer, InfoText, } from './styles'
 import PlayerCard from '../PlayerCard'
-const MatchCard = ()=>{
-    return(
+const MatchCard = ({MatchInfo})=>{
+    console.log(MatchInfo)
+    return( 
         <CardContainer>
             <PlayerCard 
                 side={0}
-                pName={'rockman'}
-                charOne={'superman'}
-                charTwo={'rock'}
+                pName={MatchInfo.p1.name}
+                charOne={AbbreviationsToName(MatchInfo.p1.charOne)}
+                charTwo={AbbreviationsToName(MatchInfo.p1.charTwo)}
             />
-            <MatchInfo>
+            <MatchInfoContainer>
                 <InfoText>
                     Date
                 </InfoText>
@@ -27,12 +29,12 @@ const MatchCard = ()=>{
                 <InfoText>
                     report system?
                 </InfoText>
-            </MatchInfo>
+            </MatchInfoContainer>
             <PlayerCard 
                 side={1}
-                pName
-                charOne
-                charTwo
+                pName={MatchInfo.p2.name}
+                charOne={AbbreviationsToName(MatchInfo.p2.charOne)}
+                charTwo={AbbreviationsToName(MatchInfo.p2.charTwo)}
             />
         </CardContainer>
         )

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MatchCard from '../../components/MatchCard'
+import FakeMatches from '../../lib/fakematches'
 
 class Body extends Component {
     constructor(props){
@@ -7,10 +8,14 @@ class Body extends Component {
         this.state = {
         };
     }
+    
+ 
+
     render() {
         return (
-            <MatchCard/>
+            FakeMatches.map( match => <MatchCard  MatchInfo={match} key={match.p1} /> )
         )
+        
     }
 }
 export default Body
