@@ -1,22 +1,23 @@
 import React from 'react';
 
-import { Card, PlayerNameText, InfoText, FirstHalf, SecondHalf  } from './styles'
+import { Card, FirstHalf, SecondHalf, InfoTextConntainer  } from './styles'
 
 const PlayerCard = ({side= 0, pName='unknown', charOne='Default', charTwo='Default 2'}) => {
     
     return  (
         <Card charOne={charOne}>
+            <InfoTextConntainer>
+                
+                    Player: {pName}
+                    <br/>
+                    Character One: {charOne.enName}
+                    <br/>
+                    
+                    Character Two: {charTwo.enName}
+                    <br/>
+            </InfoTextConntainer>
             <FirstHalf char={charOne}>
-            <InfoText>
-            Player: {pName}
-            <br/>
-            Character One: {charOne.enName}
-            <br/>
             
-            Character Two: {charTwo.enName}
-            <br/>
-            
-            </InfoText>
             </FirstHalf>
             <SecondHalf char={charTwo}>
             
