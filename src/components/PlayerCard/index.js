@@ -1,30 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Card, FirstHalf, SecondHalf, InfoTextConntainer  } from './styles'
 
-const PlayerCard = ({side= 0, pName='unknown', charOne='Default', charTwo='Default 2'}) => {
+import CardColors from '../../lib/CardColors';
+
+const randomCardColor = (colorOne = null)=>{
+    if(!colorOne){ colorOne = CardColors[Math.floor(Math.random() * CardColors.length)]}
     
-    return  (
-        <Card charOne={charOne}>
+    const colorTwo = CardColors[Math.floor(Math.random() * CardColors.length)]
+    if (colorOne === colorTwo){
+        return randomCardColor(colorOne)
+    }
+    return [colorOne, colorTwo]
+    
+}
+class PlayerCard extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            colors: randomCardColor()
+        };
+    }
+    
+    render() {
+        console.log(this.props)
+
+        // this.props = {side,pName, charOne, charTwo}
+
+        return  (
+            
+            <Card charOne={this.props.charOne}>
             <InfoTextConntainer>
-                
-                    Player: {pName}
-                    <br/>
-                    Character One: {charOne.enName}
-                    <br/>
-                    
-                    Character Two: {charTwo.enName}
-                    <br/>
+            
+            Player: {this.props.pName}
+            <br/>
+            Character One: {this.props.charOne.enName}
+            <br/>
+            
+            Character Two: {this.props.charTwo.enName}
+            <br/>
             </InfoTextConntainer>
-            <FirstHalf char={charOne}>
+            <FirstHalf char={this.props.charOne} color={this.state.colors[0]}>
             
             </FirstHalf>
-            <SecondHalf char={charTwo}>
+            <SecondHalf char={this.props.charTwo} color={this.state.colors[1]}>
             
             </SecondHalf>
-        
-        </Card>
-        )
+            
+            </Card>
+            )
+        }
     }
     
     export default PlayerCard

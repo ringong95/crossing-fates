@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 import Mixins from '../../lib/Mixins';
-import CardColors from '../../lib/CardColors';
-
-const randomCardColor = ()=>{
-  return CardColors[Math.floor(Math.random() * CardColors.length)];
-}
 
 export const Card = styled.div`
 
@@ -40,7 +35,7 @@ height: 100%;
 width: 65%;
 left: 0;
 top: 0;
-background: ${randomCardColor} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background: ${props => props.color} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
 background-blend-mode: multiply;
 background-position: top right;
 background-size: 125%;
@@ -55,7 +50,7 @@ height: 100%;
 width: 65%;
 right: 0;
 top: 0;
-background: ${randomCardColor} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background: ${props => props.color} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
 background-blend-mode: multiply;
 background-position: top left;
 background-size: 125%;
