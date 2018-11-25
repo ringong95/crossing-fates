@@ -25,25 +25,25 @@ class PlayerCard extends Component {
     render() {
         console.log(this.props)
 
-        // this.props = {side,pName, charOne, charTwo}
+        const {pName, charOne, charTwo} = this.props
 
         return  (
             
-            <Card charOne={this.props.charOne}>
+            <Card charOne={charOne}>
             <InfoTextConntainer>
             
-            Player: {this.props.pName}
+            Player: {pName}
             <br/>
-            Character One: {this.props.charOne.enName}
+            Character One: {charOne.enName}
             <br/>
             
-            Character Two: {this.props.charTwo.enName}
+            Character Two: {charTwo.enName}
             <br/>
             </InfoTextConntainer>
-            <FirstHalf char={this.props.charOne} color={this.state.colors[0]}>
+            <FirstHalf char={charOne} color={this.state.colors[0]}>
             
             </FirstHalf>
-            <SecondHalf char={this.props.charTwo} color={this.state.colors[1]}>
+            <SecondHalf char={charTwo} color={this.state.colors[1]}>
             
             </SecondHalf>
             
