@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './index.css';
 import App from './App';
+import storeFactory from './store/createStore';
 import * as serviceWorker from './serviceWorker';
+
+const initialState = {
+};
+
+const Store = storeFactory(initialState);
 
 const FinalApp = () => (
     <MuiThemeProvider>
-      <App />
+      <Provider store={Store}>
+        <App />
+      </Provider>
     </MuiThemeProvider>
   );
 

@@ -1,5 +1,5 @@
 # Crossing Fates
-a React App to archive and link to locations to watch high level Blaz Blue cross tag battle matches
+a React App to archive and link to locations to watch high level BlazBlue cross tag battle matches
 
 ## Getting Started
 Prerequisites:

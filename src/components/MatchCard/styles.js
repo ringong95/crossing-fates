@@ -10,10 +10,28 @@ export const CardContainer = styled.div`
 `
 
 export const MatchInfoContainer = styled.div`
+padding: 45px 10px;
   background: SeaGreen;
   width:33%;
+  font-family: 'Lato', sans-serif;
+font-weight: bold;  
+text-align: center;
+color: #131516;
+font-size: 1.5em
+text-shadow: 1px 1px #DADEDF;
+text-transform: capitalize;
 
 `
+export const LinkText = styled.a`
+color: ${({ active }) => (
+  active ? 'black' : 'black'
+)};
+font-size: 1.5em
+text-shadow: 1px 1px #DADEDF;
+text-transform: capitalize;
+text-decoration: none;
+`
+
 
 export const PlayerNameText = styled.p`
 

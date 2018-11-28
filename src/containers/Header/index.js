@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
-import CharacterAutofill from '../../components/CharacterAutofill'
+import matches from '../../lib/fakematches'
+import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
+import { FetchMatches } from '../../actions/fetchActions'
 import { SearchContainer, SearchFields, ContainerLabel } from './styles'
 
 class Header extends Component {
@@ -17,6 +20,12 @@ class Header extends Component {
         };
     }
     
+    componentDidMount(){
+        //load dummy matches here and insert to reducer
+        console.log(matches)
+        this.props.loadMatches(matches)
+    }
+
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
@@ -30,14 +39,28 @@ class Header extends Component {
                     Search Filter  
                 </ContainerLabel>
                 <SearchFields>
-                    <CharacterAutofill/>
+                    <CharacterAutoFill
+                        player={1}
+                        character={1}
+                    />
+                    <CharacterAutoFill
+                        player={1}
+                        character={2}
+                    />
                     <PlayerNames 
                         value={this.state.p1Name}
                         onChange={this.handleChange('p1Name')}
                     />
                 </SearchFields>
                 <SearchFields>
-                    <CharacterAutofill/>
+                <CharacterAutoFill
+                        player={2}
+                        character={1}
+                    />
+                    <CharacterAutoFill
+                        player={2}
+                        character={2}
+                    />
                     <PlayerNames
                         value={this.state.p2Name}
                         onChange={this.handleChange('p2Name')}
@@ -48,4 +71,12 @@ class Header extends Component {
             
         }
     }
-    export default Header
+    const mapStateToProps = (state) => {
+        return {
+            matches: state.matches,
+        };
+    }
+    const mapDispatchToProps = dispatch => ({
+        loadMatches: matches => dispatch(FetchMatches(matches))
+    })
+    export default connect(mapStateToProps, mapDispatchToProps)(Header)

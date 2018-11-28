@@ -3,7 +3,7 @@ import Mixins from '../../lib/Mixins';
 
 export const Card = styled.div`
 
-width:33.5%;
+width: 50%;
 height: ${Mixins.cardHeight};
 position: relative;
 border-right:  1px solid  black;
@@ -21,9 +21,9 @@ z-index: 2;
 font-family: 'Lato', sans-serif;
 font-weight: bold;
 text-align: center;
-color:white;
+color: white;
 font-size: 1.75em
-text-shadow: 1px 1px black;
+text-shadow: 1px 1px #131516;
 text-transform: capitalize;
 `
 
@@ -35,7 +35,7 @@ height: 100%;
 width: 65%;
 left: 0;
 top: 0;
-background: ${props => props.color} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background: ${props => props.color} url(${props => require(`../..//assets/charImages/${props.char.abbrev}.png`)});
 background-blend-mode: multiply;
 background-position: top right;
 background-size: 125%;
@@ -50,7 +50,7 @@ height: 100%;
 width: 65%;
 right: 0;
 top: 0;
-background: ${props => props.color} url(${props => require(`../../charImages/${props.char.abbrev}.png`)});
+background: ${props => props.color} url(${props => require(`../..//assets/charImages/${props.char.abbrev}.png`)});
 background-blend-mode: multiply;
 background-position: top left;
 background-size: 125%;
