@@ -41,7 +41,7 @@ class Header extends Component {
                 <SearchFields>
                     <CharacterAutoFill
                         player={1}
-                        characterNumber={1}
+                        character={1}
                     />
                     <PlayerNames 
                         value={this.state.p1Name}

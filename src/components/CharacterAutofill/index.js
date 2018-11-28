@@ -1,6 +1,8 @@
 import Autosuggest from 'react-autosuggest';
 import React from 'react';
+import { connect } from 'react-redux';
 import CharacterList from '../../lib/characterlist'
+import { SearchText } from '../../actions/searchActions'
 
 // Imagine you have a list of languages that you'd like to autosuggest.
 const characters = CharacterList
@@ -45,6 +47,11 @@ const getSuggestions = value => {
                 this.setState({
                     value: newValue
                 });
+                this.props.onTextChange({
+                    player: this.props.player,
+                    character: this.props.character,
+                    text: newValue
+                })
             };
             
             // Autosuggest will call this function every time you need to update suggestions.
@@ -85,4 +92,13 @@ const getSuggestions = value => {
                     );
                 }
             }
-            export default CharacterAutoFill;
+            const mapStateToProps = state => {
+                return {
+                    
+                }
+            }
+            const mapDispatchToProps = dispatch =>({
+                onTextChange: text =>  dispatch(SearchText({text})),
+            })
+            
+            export default connect(mapStateToProps, mapDispatchToProps)(CharacterAutoFill);
