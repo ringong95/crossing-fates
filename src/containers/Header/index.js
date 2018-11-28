@@ -43,13 +43,24 @@ class Header extends Component {
                         player={1}
                         character={1}
                     />
+                    <CharacterAutoFill
+                        player={1}
+                        character={2}
+                    />
                     <PlayerNames 
                         value={this.state.p1Name}
                         onChange={this.handleChange('p1Name')}
                     />
                 </SearchFields>
                 <SearchFields>
-                    <CharacterAutoFill/>
+                <CharacterAutoFill
+                        player={2}
+                        character={1}
+                    />
+                    <CharacterAutoFill
+                        player={2}
+                        character={2}
+                    />
                     <PlayerNames
                         value={this.state.p2Name}
                         onChange={this.handleChange('p2Name')}

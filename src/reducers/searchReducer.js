@@ -1,9 +1,9 @@
 import { SEARCH_TEXT } from '.././actions/searchActions.js'
 const defaultState = {
     p1Ch1: '',
-    p1CH2: '',
-    p2CH1: '',
-    p2CH2: '',
+    p1Ch2: '',
+    p2Ch1: '',
+    p2Ch2: '',
 }
 
 export default (state = defaultState, action) => {
