@@ -28,9 +28,8 @@ const getSuggestions = value => {
         );
         
         class CharacterAutoFill extends React.Component {
-            constructor() {
-                super();
-                
+            constructor(props) {
+                super(props);
                 // Autosuggest is a controlled component.
                 // This means that you need to provide an input value
                 // and an onChange handler that updates this value (see below).

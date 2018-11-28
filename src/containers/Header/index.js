@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
+import matches from '../../lib/fakematches'
 import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
+import { FetchMatches } from '../../actions/fetchActions'
 import { SearchContainer, SearchFields, ContainerLabel } from './styles'
 
 class Header extends Component {
@@ -17,6 +20,12 @@ class Header extends Component {
         };
     }
     
+    componentDidMount(){
+        //load dummy matches here and insert to reducer
+        console.log(matches)
+        this.props.loadMatches(matches)
+    }
+
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
@@ -30,7 +39,10 @@ class Header extends Component {
                     Search Filter  
                 </ContainerLabel>
                 <SearchFields>
-                    <CharacterAutoFill/>
+                    <CharacterAutoFill
+                        player={1}
+                        characterNumber={1}
+                    />
                     <PlayerNames 
                         value={this.state.p1Name}
                         onChange={this.handleChange('p1Name')}
@@ -48,4 +60,11 @@ class Header extends Component {
             
         }
     }
-    export default Header
+    const mapStateToProps = (state) => {
+        return {
+        };
+    }
+    const mapDispatchToProps = dispatch => ({
+        loadMatches: matches => dispatch(FetchMatches(matches))
+    })
+    export default connect(mapStateToProps, mapDispatchToProps)(Header)
