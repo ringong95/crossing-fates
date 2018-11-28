@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import CharacterAutofill from '../../components/CharacterAutofill'
+import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
 import { SearchContainer, SearchFields, ContainerLabel } from './styles'
 
@@ -30,14 +30,14 @@ class Header extends Component {
                     Search Filter  
                 </ContainerLabel>
                 <SearchFields>
-                    <CharacterAutofill/>
+                    <CharacterAutoFill/>
                     <PlayerNames 
                         value={this.state.p1Name}
                         onChange={this.handleChange('p1Name')}
                     />
                 </SearchFields>
                 <SearchFields>
-                    <CharacterAutofill/>
+                    <CharacterAutoFill/>
                     <PlayerNames
                         value={this.state.p2Name}
                         onChange={this.handleChange('p2Name')}
