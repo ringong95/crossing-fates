@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import MatchCard from '../../components/MatchCard'
-import FakeMatches from '../../lib/fakematches'
 
 class Body extends Component {
     constructor(props){
         super(props)
-        this.state = {
-        };
     }
-    
- 
-
     render() {
         return (
-            FakeMatches.map( match => <MatchCard  MatchInfo={match} key={match.p1} /> )
-        )
-        
+            this.props.matches.map( match => <MatchCard  MatchInfo={match} key={match.p1} /> )
+        )  
     }
 }
-export default Body
+
+    const mapStateToProps = (state) => {
+        return {
+            matches: state.matches,
+        };
+    }
+export default connect(mapStateToProps)(Body);
