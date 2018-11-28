@@ -1,29 +1,53 @@
-const styles = theme => ({
-    root: {
-        // height: 250,
-        flexGrow: 1,
-        margin: 'auto 5%',
-    },
+export default {
     container: {
-        position: 'relative',
+        position: 'relative'
+    },
+    input: {
+        width: '85%',
+        height: 30,
+        margin:'10px 20px',
+        padding: '0 20px',
+        fontFamily: 'Lato, sans-serif',
+        fontWeight: 300,
+        fontSize: 16,
+        
+        border: '0px solid #aaa',
+        borderBottom: '1px solid gray'
+    },
+    inputFocused: {
+        outline: 'none'
+    },
+    inputOpen: {
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0
+    },
+    suggestionsContainer: {
+        display: 'none'
     },
     suggestionsContainerOpen: {
-        position: 'absolute',
-        zIndex: 1,
-        marginTop: theme.spacing.unit,
-        left: 0,
-        right: 0,
-    },
-    suggestion: {
         display: 'block',
+        position: 'absolute',
+        top: 51,
+        width: 280,
+        border: '1px solid #aaa',
+        backgroundColor: '#fff',
+        fontFamily: 'Lato, sans-serif',
+        fontWeight: 300,
+        fontSize: 16,
+        borderBottomLeftRadius: 4,
+        borderBottomRightRadius: 4,
+        zIndex: 2
     },
     suggestionsList: {
         margin: 0,
         padding: 0,
         listStyleType: 'none',
     },
-    divider: {
-        height: theme.spacing.unit * 2,
+    suggestion: {
+        cursor: 'pointer',
+        padding: '10px 20px'
     },
-});
-export default styles;
+    suggestionHighlighted: {
+        backgroundColor: '#ddd'
+    }
+};

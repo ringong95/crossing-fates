@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CharacterList from '../../lib/characterlist'
 import { SearchText } from '../../actions/searchActions'
+import theme from './styles.js'
 
 // Imagine you have a list of languages that you'd like to autosuggest.
 const characters = CharacterList
@@ -88,6 +89,7 @@ const getSuggestions = value => {
                     getSuggestionValue={getSuggestionValue}
                     renderSuggestion={renderSuggestion}
                     inputProps={inputProps}
+                    theme={theme}
                     />
                     );
                 }
