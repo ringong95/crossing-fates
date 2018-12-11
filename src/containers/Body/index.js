@@ -17,11 +17,21 @@ class Body extends Component {
             if(filtered.length > 0) return true
         })
     }
-    
     render() {
-        console.log(this.filterMatches()) 
+        const searchQueries =  Object.values(this.props.search)
+        let matches;
+
+        if (searchQueries.filter( query => query.length > 0 ) == false){
+            matches = this.props.matches.map( match => <MatchCard  MatchInfo={match} key={match.p1} />)
+        } else {
+            matches = this.filterMatches().map( match => <MatchCard  MatchInfo={match} key={match.p1} />)
+        }
+        console.log(matches)
         return (
-            this.props.matches.map( match => <MatchCard  MatchInfo={match} key={match.p1} /> )
+            <div>
+            {matches}
+
+            </div>
             )  
         }
     }
