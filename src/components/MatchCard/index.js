@@ -4,7 +4,6 @@ import AbbreviationsToName from './../../lib/AbbreviationsToName'
 import { CardContainer, MatchInfoContainer, InfoText, LinkText } from './styles'
 import PlayerCard from '../PlayerCard'
 const MatchCard = ({MatchInfo})=>{
-    console.log(MatchInfo)
     return( 
         <CardContainer>
             <PlayerCard 

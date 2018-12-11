@@ -1,6 +1,6 @@
 import characterAbbrevs from './characterAbbrevs'
 
-export default (name)=>{
-    return characterAbbrevs.filter(character =>character.abbrev === name
+export default (abbrev)=>{
+    return characterAbbrevs.filter(character =>character.abbrev === abbrev
     )[0]
 }  

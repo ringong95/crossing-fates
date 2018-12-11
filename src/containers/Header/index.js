@@ -22,7 +22,6 @@ class Header extends Component {
     
     componentDidMount(){
         //load dummy matches here and insert to reducer
-        console.log(matches)
         this.props.loadMatches(matches)
     }
 
