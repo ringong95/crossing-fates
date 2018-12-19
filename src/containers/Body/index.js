@@ -6,6 +6,7 @@ import nameToAbbrev from '../../lib/NameToAbbreviations';
 class Body extends Component {
     constructor(props){
         super(props)
+        
     }
     filterMatches (){
         const { matches, search }= this.props 

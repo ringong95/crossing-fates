@@ -8,6 +8,7 @@ import theme from './styles.js'
 // Imagine you have a list of languages that you'd like to autosuggest.
 const characters = CharacterList
 
+
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
@@ -40,19 +41,27 @@ const getSuggestions = value => {
                 // and they are initially empty because the Autosuggest is closed.
                 this.state = {
                     value: '',
-                    suggestions: []
+                    suggestions: [],
+                    timeout:null
                 };
             }
             
             onChange = (event, { newValue }) => {
+                clearTimeout(this.state.timeout)
                 this.setState({
                     value: newValue
                 });
-                this.props.onTextChange({
-                    player: this.props.player,
-                    character: this.props.character,
-                    text: newValue
+
+                this.setState({
+                    timeout: setTimeout( ()=> {
+                        this.props.onTextChange({
+                            player: this.props.player,
+                            character: this.props.character,
+                            text: newValue
+                        })
+                    }, 300)
                 })
+            
             };
             
             // Autosuggest will call this function every time you need to update suggestions.
