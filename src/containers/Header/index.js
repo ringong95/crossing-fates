@@ -17,6 +17,7 @@ class Header extends Component {
             p2characterOne: 1,
             p2characterTwo: 2,
             p2Name: '',
+            showSearch: true,
         };
     }
     
@@ -25,47 +26,58 @@ class Header extends Component {
         this.props.loadMatches(matches)
     }
 
+
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
         });
     };
     
+    toggleSearchFields = () =>{
+        this.setState(prevState =>({
+            showSearch: !prevState.showSearch 
+        }))
+    }
+
     render() {
         return (
-            <SearchContainer>
-                <ContainerLabel> 
-                    Search Filter  
+            <div>
+                <ContainerLabel onClick={this.toggleSearchFields}> 
+                        Search Filter  
+                        {this.state.showSearch}
                 </ContainerLabel>
-                <SearchFields>
+                <SearchContainer show={this.state.showSearch}>
+                    <SearchFields>
+                        <CharacterAutoFill
+                            player={1}
+                            character={1}
+                        />
+                        <CharacterAutoFill
+                            player={1}
+                            character={2}
+                        />
+                        <PlayerNames 
+                            value={this.state.p1Name}
+                            onChange={this.handleChange('p1Name')}
+                        />
+                    </SearchFields>
+                    <SearchFields>
                     <CharacterAutoFill
-                        player={1}
-                        character={1}
-                    />
-                    <CharacterAutoFill
-                        player={1}
-                        character={2}
-                    />
-                    <PlayerNames 
-                        value={this.state.p1Name}
-                        onChange={this.handleChange('p1Name')}
-                    />
-                </SearchFields>
-                <SearchFields>
-                <CharacterAutoFill
-                        player={2}
-                        character={1}
-                    />
-                    <CharacterAutoFill
-                        player={2}
-                        character={2}
-                    />
-                    <PlayerNames
-                        value={this.state.p2Name}
-                        onChange={this.handleChange('p2Name')}
-                    />
-                </SearchFields>
-            </SearchContainer>
+                            player={2}
+                            character={1}
+                        />
+                        <CharacterAutoFill
+                            player={2}
+                            character={2}
+                        />
+                        <PlayerNames
+                            value={this.state.p2Name}
+                            onChange={this.handleChange('p2Name')}
+                        />
+                    </SearchFields>
+                </SearchContainer>
+            </div>
+            
             )
             
         }

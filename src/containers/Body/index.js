@@ -22,7 +22,7 @@ class Body extends Component {
         const searchQueries =  Object.values(this.props.search)
         let matches;
 
-        if (searchQueries.filter( query => query.length > 0 ) == false){
+        if (searchQueries.filter( query => query.length > 0 ) == false) {
             matches = this.props.matches.map( match => <MatchCard  MatchInfo={match} key={match.p1} />)
         } else {
             matches = this.filterMatches().map( match => <MatchCard  MatchInfo={match} key={match.p1} />)
