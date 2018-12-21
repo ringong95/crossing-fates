@@ -5,7 +5,7 @@ import matches from '../../lib/fakematches'
 import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
 import { FetchMatches } from '../../actions/fetchActions'
-import { SearchContainer, SearchFields, ContainerLabel } from './styles'
+import { SearchContainer, SearchFields, ContainerLabel, HeaderContainer } from './styles'
 
 class Header extends Component {
     constructor(props){
@@ -41,7 +41,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
+            <HeaderContainer>
                 <ContainerLabel onClick={this.toggleSearchFields}> 
                         Search Filter  
                         {this.state.showSearch}
@@ -76,7 +76,7 @@ class Header extends Component {
                         />
                     </SearchFields>
                 </SearchContainer>
-            </div>
+            </HeaderContainer>
             
             )
             

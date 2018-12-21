@@ -16,6 +16,16 @@ width: 50%;
 export const ContainerLabel = styled.a`
 width: 100%
 margin: 0 auto;
+`
+
+export const HeaderContainer = styled.div`
+position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
+z-index: 10000;
+background: white;
+width: 100%
+border-bottom:    1px solid  black;
 
 `
 
