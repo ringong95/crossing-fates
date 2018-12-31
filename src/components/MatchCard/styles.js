@@ -11,7 +11,7 @@ export const CardContainer = styled.div`
 
 export const MatchInfoContainer = styled.div`
 padding: 45px 10px;
-  background: SeaGreen;
+  background: #EEEEEE;
   width:33%;
   font-family: 'Lato', sans-serif;
 font-weight: bold;  

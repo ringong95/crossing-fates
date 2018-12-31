@@ -10,7 +10,7 @@ export default {
         fontFamily: 'Lato, sans-serif',
         fontWeight: 300,
         fontSize: 16,
-        
+        background: '#EEEEEE',
         border: '0px solid #aaa',
         borderBottom: '1px solid gray'
     },
@@ -30,7 +30,7 @@ export default {
         top: 51,
         width: 280,
         border: '1px solid #aaa',
-        backgroundColor: '#fff',
+        background: '#EEEEEE',
         fontFamily: 'Lato, sans-serif',
         fontWeight: 300,
         fontSize: 16,
@@ -48,6 +48,6 @@ export default {
         padding: '10px 20px'
     },
     suggestionHighlighted: {
-        backgroundColor: '#ddd'
+        background: '#EEEEEE',
     }
 };

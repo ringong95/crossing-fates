@@ -41,7 +41,7 @@ class Header extends Component {
 
     render() {
         return (
-            <HeaderContainer>
+            <HeaderContainer show={this.state.showSearch}>
                 <ContainerLabel onClick={this.toggleSearchFields}> 
                         Search Filter  
                         {this.state.showSearch}
