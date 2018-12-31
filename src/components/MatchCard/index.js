@@ -13,12 +13,12 @@ const MatchCard = ({MatchInfo})=>{
             />
             <MatchInfoContainer>
                 <InfoText>
-                    Date: {MatchInfo.date}
+                    Date: {("0" + MatchInfo.date.getMonth()+1).slice(-2)}-{("0" + MatchInfo.date.getDate()).slice(-2)}-{ MatchInfo.date.getFullYear()}
                 </InfoText>
                 <InfoText>
                     MatchLocation: {MatchInfo.location}
                 </InfoText>
-                <LinkText href="/">>
+                <LinkText href={MatchInfo.source}  target="_blank">
                     Hyper link to vod
                 </LinkText>
             </MatchInfoContainer>
