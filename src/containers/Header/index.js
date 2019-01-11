@@ -5,7 +5,8 @@ import matches from '../../lib/fakematches'
 import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
 import { FetchMatches } from '../../actions/fetchActions'
-import { SearchContainer, SearchFields, ContainerLabel, HeaderContainer } from './styles'
+import Popup from "reactjs-popup";
+import { SearchContainer, SearchFields, ContainerLabel, HeaderContainer, Label } from './styles'
 
 class Header extends Component {
     constructor(props){
@@ -42,11 +43,24 @@ class Header extends Component {
     render() {
         return (
             <HeaderContainer show={this.state.showSearch}>
-                <ContainerLabel onClick={this.toggleSearchFields}> 
+            <ContainerLabel>
+                <Label > 
+                    Logo
+                </Label>
+            <Label onClick={this.toggleSearchFields}> 
                         Search Filter  
+                        
                         {this.state.showSearch}
-                </ContainerLabel>
-                <SearchContainer show={this.state.showSearch}>
+                </Label>
+                <Popup 
+                closeOnDocumentClick
+                keepTooltipInside=".tooltipBoundary"
+                trigger={<button> Trigger</button>} 
+                position="left center">
+                    <div>Popup content here !!</div>
+                </Popup>
+            </ContainerLabel>
+            <SearchContainer show={this.state.showSearch}>
                     <SearchFields>
                         <CharacterAutoFill
                             player={1}
