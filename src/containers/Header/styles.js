@@ -21,6 +21,14 @@ margin: 0 auto;
 justify-content: center;
 align-items: center;
 padding-top: 10px;
+text-decoration: underline;
+color: #14171a;
+
+&:hover {
+    text-decoration:none;
+    cursor: pointer;
+    color: #757575;
+}
 `
 
 export const HeaderContainer = styled.div`
