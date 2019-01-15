@@ -18,11 +18,17 @@ export const ContainerLabel = styled.a`
 display:flex;
 width: 100%
 margin: 0 auto;
+justify-content: space-between;
+align-items: center;
+padding-top: 10px;
+`
+export const Label = styled.a`
+display:flex;
+margin: 0 20px;
 justify-content: center;
 align-items: center;
 padding-top: 10px;
 `
-
 export const HeaderContainer = styled.div`
 position: -webkit-sticky; /* Safari */
 position: sticky;
