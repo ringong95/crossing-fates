@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import matches from '../../lib/fakematches'
 import CharacterAutoFill from '../../components/CharacterAutofill'
 import PlayerNames from '../../components/PlayerNameField';
+import PopupLogin from '../../components/PopupLogin'
+
 import { FetchMatches } from '../../actions/fetchActions'
 import { SearchContainer, SearchFields, ContainerLabel, HeaderContainer, Label } from './styles'
 
@@ -18,7 +20,9 @@ class Header extends Component {
             p2characterTwo: 2,
             p2Name: '',
             showSearch: true,
+            showPopup: false,
         };
+    
     }
     
     componentDidMount(){
@@ -26,6 +30,11 @@ class Header extends Component {
         this.props.loadMatches(matches)
     }
 
+    togglePopup() {
+        this.setState({
+            showPopup: !this.state.showPopup
+        });
+    }
 
     handleChange = name => event => {
         this.setState({
@@ -43,21 +52,23 @@ class Header extends Component {
         return (
             <HeaderContainer show={this.state.showSearch}>
                 <ContainerLabel>
-                <Label > 
-                    Logo
-                </Label>
-            <Label onClick={this.toggleSearchFields}> 
+                    <Label > 
+                        Logo
+                    </Label>
+                    <Label onClick={this.toggleSearchFields}> 
                         Search Filter  
-                        
                         {this.state.showSearch}
-                </Label>
-                <Label onClick={()=>console.log('help')}> 
-                    Login
-                </Label>
+                    </Label>
+                    <Label onClick={()=>this.togglePopup()}> 
+                        Login
+                    
+                    </Label>
+                    {
+                        this.state.showPopup && <PopupLogin
+                        text='Close Me'
+                        closePopup={this.togglePopup.bind(this)}/>
+                        }
             </ContainerLabel>
-
-
-
                 <SearchContainer show={this.state.showSearch}>
                     <SearchFields>
                         <CharacterAutoFill
