@@ -27,7 +27,6 @@ class Body extends Component {
         } else {
             matches = this.filterMatches().map( match => <MatchCard  MatchInfo={match} key={match.p1} />)
         }
-        console.log(matches)
         return (
             <div>
             {matches}

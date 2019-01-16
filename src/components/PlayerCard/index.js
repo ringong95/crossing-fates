@@ -23,7 +23,7 @@ class PlayerCard extends Component {
     }
     
     render() {
-        console.log(this.props)
+
 
         const {pName, charOne, charTwo} = this.props
 
