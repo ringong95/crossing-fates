@@ -57,6 +57,7 @@ class Header extends Component {
                     </Label>
                     <Label onClick={this.toggleSearchFields}> 
                         Search Filter  
+                        
                         {this.state.showSearch}
                     </Label>
                     <Label onClick={()=>this.togglePopup()}> 
