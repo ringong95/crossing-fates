@@ -38,7 +38,7 @@ export const TabGroup = styled.ul`
     }
     li a {
         display:block;
-        text-decoration:none;
+        text-decoration: none;
         padding:15px;
         background:rgba(${hexToRgb(graylight)},.25);
         color:${graylight};
@@ -60,9 +60,6 @@ export const TabGroup = styled.ul`
 `
 
 export const TabContent = styled.div`
-    >div:last-child {
-        display:none;
-    }
 `
 
 export const HeaderOne = styled.h1`
@@ -160,4 +157,11 @@ export const SubmitButton = styled.button`
 export const Forgot = styled.p`
     margin-top:-20px;
     text-align:right;
+    color: ${main};
+    &:hover, &:focus {
+        background:${mainDark};
+    }
+    
+    text-decoration: none;
+
 `
