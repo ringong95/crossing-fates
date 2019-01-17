@@ -1,86 +1,86 @@
 import React from 'react';
 
-import { FormDiv } from './styles'
+import { FormDiv, TabGroup, TabContent, HeaderOne, InputLabel, Input, FieldWraper, TopRow, SubmitButton, Forgot } from './styles'
 const LoginForm = ()=>{
     return(
         
         <FormDiv>
             
-            <ul class="tab-group">
+            <TabGroup>
                 <li class="tab active"><a href="#signup">Sign Up</a></li>
                 <li class="tab"><a href="#login">Log In</a></li>
-            </ul>
+            </TabGroup>
             
-            <div class="tab-content">
+            <TabContent>
                 <div id="signup">   
-                <h1>Sign Up for Free</h1>
+                <HeaderOne>Sign Up for Free</HeaderOne>
             
                 <form action="/" method="post">
             
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
+                    <TopRow>
+                        <FieldWraper>
+                            <InputLabel>
                                 First Name<span class="req">*</span>
-                            </label>
-                        <input type="text" required autocomplete="off" />
-                        </div>
+                            </InputLabel>
+                        <Input type="text" required autocomplete="off" />
+                        </FieldWraper>
 
-                        <div class="field-wrap">
-                            <label>
+                        <FieldWraper>
+                            <InputLabel>
                                 Last Name<span class="req">*</span>
-                            </label>
-                        <input type="text"required autocomplete="off"/>
-                        </div>
-                    </div>
+                            </InputLabel>
+                        <Input type="text"required autocomplete="off"/>
+                        </FieldWraper>
+                    </TopRow>
             
-                    <div class="field-wrap">
-                        <label>
+                    <FieldWraper>
+                        <InputLabel>
                             Email Address<span class="req">*</span>
-                        </label>
-                        <input type="email"required autocomplete="off"/>
-                    </div>
+                        </InputLabel>
+                        <Input type="email"required autocomplete="off"/>
+                    </FieldWraper>
                 
-                    <div class="field-wrap">
-                        <label>
+                    <FieldWraper>
+                        <InputLabel>
                             Set A Password<span class="req">*</span>
-                        </label>
-                        <input type="password"required autocomplete="off"/>
-                    </div>
+                        </InputLabel>
+                        <Input type="password"required autocomplete="off"/>
+                    </FieldWraper>
             
-                    <button type="submit" class="button button-block">Get Started</button>
+                    <SubmitButton type="submit">Get Started</SubmitButton>
             
                 </form>
             
             </div>
             
             <div id="login">   
-            <h1>Welcome Back!</h1>
+            <HeaderOne>Welcome Back!</HeaderOne>
             
             <form action="/" method="post">
             
-            <div class="field-wrap">
-            <label>
+            <FieldWraper>
+            <InputLabel>
             Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-            </div>
+            </InputLabel>
+            <Input type="email"required autocomplete="off"/>
+            </FieldWraper>
             
-            <div class="field-wrap">
-            <label>
+            <FieldWraper>
+            <InputLabel>
             Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-            </div>
+            </InputLabel>
+            <Input type="password"required autocomplete="off"/>
+            </FieldWraper>
             
-            <p class="forgot"><a href="#">Forgot Password?</a></p>
+            <Forgot><a href="#">Forgot Password?</a></Forgot>
             
-            <button class="button button-block">Log In</button>
+            <SubmitButton >Log In </SubmitButton>
             
             </form>
             
             </div>
             
-            </div>
+            </TabContent>
         
         </FormDiv> 
         )
