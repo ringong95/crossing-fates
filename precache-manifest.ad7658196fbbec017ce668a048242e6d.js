@@ -4,12 +4,16 @@ self.__precacheManifest = [
     "url": "/crossing-fates/static/media/TAG_MI.f5cf012e.png"
   },
   {
-    "revision": "6e59c06baae70d04a079",
-    "url": "/crossing-fates/static/css/main.8cb47494.chunk.css"
+    "revision": "0e0788344c144867774c",
+    "url": "/crossing-fates/static/css/main.210d60e8.chunk.css"
   },
   {
-    "revision": "f5d8e1319d19954de946",
-    "url": "/crossing-fates/static/js/1.f5d8e131.chunk.js"
+    "revision": "125ce5f18fc583ad122ba1ed8cccc515",
+    "url": "/crossing-fates/static/media/TAG_YZ.125ce5f1.png"
+  },
+  {
+    "revision": "78001cc15fe058b403d0",
+    "url": "/crossing-fates/static/js/1.78001cc1.chunk.js"
   },
   {
     "revision": "f53607dd666105b02ff5",
@@ -88,8 +92,8 @@ self.__precacheManifest = [
     "url": "/crossing-fates/static/media/TAG_MA.c4a943cd.png"
   },
   {
-    "revision": "6e59c06baae70d04a079",
-    "url": "/crossing-fates/static/js/main.6e59c06b.chunk.js"
+    "revision": "0e0788344c144867774c",
+    "url": "/crossing-fates/static/js/main.0e078834.chunk.js"
   },
   {
     "revision": "3318fa4d5a636a6fde9ad0fc761516f0",
@@ -172,11 +176,11 @@ self.__precacheManifest = [
     "url": "/crossing-fates/static/media/TAG_YX.e505d9a8.png"
   },
   {
-    "revision": "125ce5f18fc583ad122ba1ed8cccc515",
-    "url": "/crossing-fates/static/media/TAG_YZ.125ce5f1.png"
+    "revision": "78001cc15fe058b403d0",
+    "url": "/crossing-fates/static/css/1.593e062a.chunk.css"
   },
   {
-    "revision": "416b8e70fb993fe2ff4a1cf2fe2cd90e",
+    "revision": "ebf2e1f8c0b554f168f297a86d09b7e8",
     "url": "/crossing-fates/index.html"
   }
 ];
