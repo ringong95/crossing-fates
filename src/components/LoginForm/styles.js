@@ -6,8 +6,6 @@ const formBg= `#13232f`;
 const white= `#ffffff`;
 
 const main= `#1ab188`;
-const mainLight= `lighten(${main},5%)`;
-const mainDark= `darken(${main},5%)`;
 
 const graylight= '#a0b3b0';
 const gray= '#ddd';
@@ -17,6 +15,22 @@ const normal= 400;
 const bold= 600;
 const br= '4px';
 
+export const Forgot = styled.p`
+    margin-top:-20px;
+    text-align:right;
+    cursor:pointer;
+    color:  ${main};
+    &:hover, &:focus {
+    background:${main};
+    filter: brightness(85%);
+
+    text-decoration: underline;
+
+    }
+    
+    text-decoration: none;
+
+`
 
 export const FormDiv = styled.div`
     background: rgba(${hexToRgb(formBg)},.9);
@@ -30,11 +44,10 @@ export const FormDiv = styled.div`
 export const TabGroup = styled.ul`
     list-style:none;
     padding:0;
+    display:flex;
     margin:0 0 40px 0;
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
+    li{
+        width:100%;
     }
     li a {
         display:block;
@@ -43,13 +56,11 @@ export const TabGroup = styled.ul`
         background:rgba(${hexToRgb(graylight)},.25);
         color:${graylight};
         font-size:20px;
-        float:left;
-        width:50%;
         text-align:center;
         cursor:pointer;
         transition:.5s ease;
         &:hover {
-            background:${mainDark};
+            filter: brightness(85%);
             color:${white};
         }
     }
@@ -83,7 +94,7 @@ export const InputLabel = styled.label`
             color: ${main};
         }
 
-        ${ props => props.active && `
+        ${ props => props.active  && `
             transform:translateY(50px);
             left:2px;
             font-size:14px;
@@ -149,19 +160,10 @@ export const SubmitButton = styled.button`
     color:$white;
     transition:all.5s ease;
     -webkit-appearance: none;
-    &:hover, &:focus {
-        background:${mainDark};
-    }
-`
-
-export const Forgot = styled.p`
-    margin-top:-20px;
-    text-align:right;
-    color: ${main};
-    &:hover, &:focus {
-        background:${mainDark};
-    }
+    cursor:pointer;
     
-    text-decoration: none;
-
+    &:hover, &:focus {
+        filter: brightness(85%);
+    }
 `
+

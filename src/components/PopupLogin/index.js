@@ -23,8 +23,6 @@ handleClick = (e)=>{
             <PopupDiv  >
                 <PopupInnerDiv innerRef={node=>this.node = node}tabIndex="0">
                 <LoginForm/>
-                <h1>{this.props.text}</h1>
-                <button onClick={this.props.closePopup}>close me</button>
                 </PopupInnerDiv>
             </PopupDiv>
             );

@@ -5,8 +5,10 @@ class LoginForm extends Component {
     constructor(props){
         super(props)
         this.state={
-            activeTab: 1
+            activeTab: 1,
         }
+
+        this.handleChange = this.handleChange.bind(this);
     }
     signUpOnClick(){
         this.setState({
@@ -14,17 +16,21 @@ class LoginForm extends Component {
         })
     }
     logInOnClick(){
- this.setState({
+        this.setState({
             activeTab: 1
         })
+    }
+    handleChange(event) {
+        const propertyName = event.target.name
+        this.setState({[propertyName]: event.target.value});
     }
     render(){
         return(
             <FormDiv>
                 
-                <TabGroup>
-                    <li class="tab active"><a href="#signup" onClick={()=>this.signUpOnClick()}>Sign Up</a></li>
-                    <li class="tab"><a href="#login" onClick={()=>this.logInOnClick()}>Log In</a></li>
+                <TabGroup test={'test'} active={this.state.activeTab}>
+                    <li className={this.state.activeTab === 0 ? 'active' : undefined}  ><a href="#signup" onClick={()=>this.signUpOnClick()}>Sign Up</a></li>
+                    <li className={this.state.activeTab === 1 ? 'active' : undefined}><a href="#login" onClick={()=>this.logInOnClick()}>Log In</a></li>
                 </TabGroup>
                 
                 <TabContent>
@@ -34,29 +40,29 @@ class LoginForm extends Component {
                         <form action="/" method="post">
                             <TopRow>
                                 <FieldWraper>
-                                    <InputLabel>
-                                        First Name<span class="req">*</span>
+                                    <InputLabel >
+                                        First Name<span className="req">*</span>
                                     </InputLabel>
-                                <Input type="text" required autocomplete="off" />
+                                <Input type="text" required name='firstName' onChange={this.handleChange    }  value={this.state.value}  />
                                 </FieldWraper>
                                 <FieldWraper>
                                     <InputLabel>
-                                        Last Name<span class="req">*</span>
+                                        Last Name<span className="req">*</span>
                                     </InputLabel>
-                                <Input type="text"required autocomplete="off"/>
+                                <Input type="text"required />
                                 </FieldWraper>
                             </TopRow>
                             <FieldWraper>
                                 <InputLabel>
-                                    Email Address<span class="req">*</span>
+                                    Email Address<span className="req">*</span>
                                 </InputLabel>
-                                <Input type="email"required autocomplete="off"/>
+                                <Input type="email"required />
                             </FieldWraper>
                             <FieldWraper>
                                 <InputLabel>
-                                    Set A Password<span class="req">*</span>
+                                    Set A Password<span className="req">*</span>
                                 </InputLabel>
-                                <Input type="password"required autocomplete="off"/>
+                                <Input type="password"required />
                             </FieldWraper>
                             <SubmitButton type="submit">Get Started</SubmitButton>
 
@@ -68,17 +74,17 @@ class LoginForm extends Component {
                         <form action="/" method="post">
                         <FieldWraper>
                             <InputLabel>
-                                Email Address<span class="req">*</span>
+                                Email Address<span className="req">*</span>
                             </InputLabel>
-                            <Input type="email"required autocomplete="off"/>
+                            <Input type="email"required />
                         </FieldWraper>    
                         <FieldWraper>
                             <InputLabel>
-                                Password<span class="req">*</span>
+                                Password<span className="req">*</span>
                             </InputLabel>
-                            <Input type="password"required autocomplete="off"/>
+                            <Input type="password"required />
                         </FieldWraper>
-                        <Forgot><a href="#">Forgot Password?</a></Forgot>
+                        <Forgot>Forgot Password?</Forgot>
                         <SubmitButton >Log In </SubmitButton>
                         </form>
                     </div>

@@ -20,9 +20,10 @@ export const PopupInnerDiv = styled.div`
 position: absolute;
 left: 25%;
 right: 25%;
-top: 25%;
-bottom: 25%;
+top: 15%;
+// bottom: 25%;
 margin: auto;
 background: white;
 z-index: 2;
+height: 0
 `

@@ -67,7 +67,7 @@ class Header extends Component {
                         this.state.showPopup && <PopupLogin
                         text='Close Me'
                         closePopup={this.togglePopup.bind(this)}/>
-                        }
+                    }
             </ContainerLabel>
                 <SearchContainer show={this.state.showSearch}>
                     <SearchFields>

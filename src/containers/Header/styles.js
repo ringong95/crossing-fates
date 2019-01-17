@@ -14,7 +14,7 @@ overflow: hidden;
 export const SearchFields = styled.div`
 width: 50%;
 `
-export const ContainerLabel = styled.a`
+export const ContainerLabel = styled.div`
 display:flex;
 width: 100%
 margin: 0 auto;
